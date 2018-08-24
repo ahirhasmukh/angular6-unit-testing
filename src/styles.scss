@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.mat-form-field {
+  display: block!important;
+  margin-bottom: -18px;
+}
+.mat-form-field-infix {
+  width: 100%!important;
+}
+.mat-error {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.mat-error + .mat-error{
+  display: none;
+}

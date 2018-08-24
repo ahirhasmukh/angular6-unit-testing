@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (submit)="onSubmit(loginForm)">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="form-group">
+        <h2>Login</h2>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email Address" formControlName="email"/>
+        </mat-form-field>
+        <mat-error *ngIf="isRequiredField(loginForm.get('email'))">Email address is required.</mat-error>
+        <mat-error *ngIf="isValidField(loginForm.get('email'))">Please enter valid email address.</mat-error>
+        <mat-error *ngIf="isValidLength(loginForm.get('email'))">Email length between 8 to 50 characters.</mat-error>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password" required/>
+        </mat-form-field>
+        <mat-error *ngIf="isRequiredField(loginForm.get('password'))">Password is required</mat-error>
+        <mat-error *ngIf="isValidField(loginForm.get('password'))">Please enter valid password.</mat-error>
+        <mat-error *ngIf="isValidLength(loginForm.get('password'))">Password length between 6 to 50 characters.</mat-error>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
